@@ -1,0 +1,23 @@
+.covered {
+	width  : 420px;
+	height : 420px;
+	/*height : 324px;*/
+	/*border : 7px solid #343738;*/
+	/*margin : 50px auto;*/
+}
+
+.second {
+	width : 400px;
+	height : 300px;
+}
+
+.third {
+	width  : 500px;
+	height : 400px;
+}
+
+.fourth {
+	width  : 420px;
+	/*height : 324px;*/
+	height : 420px;
+}
