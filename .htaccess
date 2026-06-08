@@ -1,0 +1,17 @@
+# =====================================================
+# Redirect WhatsApp links langsung ke wa.me
+# Tidak ada halaman HTML yang bisa discan Google Safe Browsing
+# =====================================================
+
+RewriteEngine On
+
+# Redirect /send.html -> wa.me (301 Permanent)
+RewriteRule ^send\.html$ https://wa.me/6281273220030?text=Mohon%20informasi%20detail%20mengenai%20Produk%20TransVision%3F [R=301,L]
+
+# Redirect /send?phone=...&text=... -> wa.me (301 Permanent)
+# Ini juga menangani URL /send?phone=...&_fb_noscript=1 yang di-flag Google
+RewriteCond %{QUERY_STRING} phone=([0-9+]+)
+RewriteRule ^send$ https://wa.me/6281273220030?text=Mohon%20informasi%20detail%20mengenai%20Produk%20TransVision%3F [R=301,L,QSD]
+
+# Fallback jika tidak ada query string
+RewriteRule ^send$ https://wa.me/6281273220030?text=Mohon%20informasi%20detail%20mengenai%20Produk%20TransVision%3F [R=301,L]
